@@ -15,7 +15,7 @@ body {
 
 .navbar {
     border-radius: 20px;
-    box-shadow: 2px 5px 20px 5px rgba(0,0,0,0.3);
+    box-shadow: 2px 5px 20px 5px rgba(0, 0, 0, 0.3);
     width: 40%;
     padding: 1% 2%;
     position: fixed;
@@ -120,6 +120,147 @@ body {
     margin: auto;
 }
 
+.back-cover {
+    height: 120vh;
+    width: 100%;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.back-cover#back-1 {
+    background-image: url(../images/background1.jpg);
+}
+
+.section-title {
+    text-align: center;
+    color: #D6D6D6;
+    font-size: 28px;
+    width: fit-content;
+    display: block;
+    margin: 3% auto;
+    position: relative;
+}
+
+.section-title::before {
+    position: absolute;
+    content: '';
+    bottom: -15px;
+    left: 0;
+    height: 5px;
+    width: 100%;
+    background-color: #D6D6D6;
+    border-radius: 20px;
+}
+
+.section-title::after {
+    position: absolute;
+    content: '';
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #FFD100;
+    bottom: -25px;
+    z-index: 1;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about {
+    height: auto;
+}
+
+.about .about-me {
+    display: block;
+    width: 80%;
+    margin: 3% auto 7%;
+    color: #D6D6D6;
+    text-align: center;
+}
+
+.about .about-me h1 {
+    font-size: 64px;
+    font-weight: bold;
+    color: #FFD100;
+}
+
+.about .about-me h3 {
+    font-size: 23px;
+    padding: 10px 0;
+}
+
+.about .about-me p {
+    text-align: justify;
+}
+
+.about .skills {
+    margin: 0 10%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    justify-content: space-evenly;
+    gap: 0 10%;
+    color: #FFD100;
+}
+
+.about .skills .skill {
+    width: 100%;
+    margin: 5% 0;
+}
+
+.about .skills .skill .skill-icon,
+.about .skills .skill .skill-name {
+    font-size: 22px;
+    display: inline-block;
+}
+
+.about .skills .skill .progress-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #333533;
+    margin: 3% 0;
+    border-radius: 10px;
+    position: relative;
+}
+
+.about .skills .skill .progress-bar::after {
+    position: absolute;
+    content: '';
+    background-color: #FFD100;
+    height: 10px;
+    border-radius: 10px;
+}
+
+.progress-bar#html::after {
+    width: 95%;
+}
+
+.progress-bar#css::after {
+    width: 95%;
+}
+
+.progress-bar#js::after {
+    width: 80%;
+}
+
+.progress-bar#php::after {
+    width: 95%;
+}
+
+.progress-bar#laravel::after {
+    width: 90%;
+}
+
+.progress-bar#python::after {
+    width: 30%;
+}
+
+.back-cover#back-2 {
+    background: url(../images/background2.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
 @media screen and (max-width: 992px) {
     .navbar {
         width: 65%;
@@ -150,11 +291,15 @@ body {
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .navbar {
         width: 80%;
         left: 10%;
         padding: 2% 2%;
+    }
+
+    .about .skills .skill {
+        grid-column: 1 / 3;
     }
 }
 
@@ -165,5 +310,10 @@ body {
 
     .home .about-me {
         grid-area: 1 / 2 / 3 / 4;
+    }
+
+    .about .about-me {
+        width: 100%;
+        padding: 0 20px;
     }
 }
